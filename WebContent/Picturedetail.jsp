@@ -25,7 +25,7 @@
 			service.closeAll();
 		%>
 
-
+		<a href="http://localhost:8080/PersonalBlog/DownloadServlet">图片下载</a>
 		
 	</div>
 </body>

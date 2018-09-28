@@ -16,6 +16,9 @@
 	.picturetitle{
 		text-align:center;
 	}
+	.usernamePrint{
+		float: right;
+	}
 	
 </style>
 
@@ -27,8 +30,13 @@
 		<a href="Picture.jsp">个人图片</a>
 		<a href="PersonalInformation.jsp">个人信息</a>
 		<a href="BlogPage.jsp">博客</a>
+		<div class="usernamePrint">
+			欢迎，<a href="#"><%= session.getAttribute("username") %></a>
+			&nbsp&nbsp<a href="http://localhost:8080/PersonalBlog/Login.jsp">注销</a>
+			
+		</div>
 	</div>
-	
+
 	<hr/>
 	
 	<!-- 主体部分 -->

@@ -15,7 +15,7 @@
 		个人信息
 		<a href="BlogPage.jsp">博客</a>
 	</div>
-	<div></div>
+	<div><a href="http://localhost:8080/PersonalBlog/RefererTest">防盗链测试</a></div>
 	<div></div>
 	<div></div>
 	<div></div>
