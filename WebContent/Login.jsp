@@ -4,24 +4,49 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script>
+	function formCheck(){
+		//获取用户名 内容 判断
+			var usernameObj=document.getElementById("usernameId");
+			var username=usernameObj.value;
+			if(username==""||username==null){
+				alert("用户名不能为空");
+				return false;
+			}
+		
+		//获取密码 内容 判断
+			var passwordObj=document.getElementById("passwordId");
+			var password=passwordObj.value;
+			if(password==""||password==null){
+				alert("密码不能为空");
+				return false;
+			}	
+		return true;
+	}
+	
+
+</script>
+
+
 <title>登录</title>
 </head>
 <body>
 	<h1>登录</h1>
-	<form method="post" action=/PersonalBlog/DoLogin>
+	<!-- /PersonalBlog/DoLogin # -->
+	<form method="post" action="/PersonalBlog/DoLogin" onsubmit="return formCheck()">
 	    <div>
             <p>
-               	用户名 <input name="username"/>
+               	用户名 <input name="username" id="usernameId"/>
                 
             </p>
             <p>
- 				密码 <input type="password" name="userpassword"/>
+ 				密码 <input type="password" name="userpassword" id="passwordId"/>
             </p>
             <input type="submit" value="提交">
-			<a href="register.jsp">用户注册</a>
+			<a href="Register.jsp">用户注册</a>
         </div>
 		
-	
 	</form>
 	
 	

@@ -4,6 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<script type="text/javascript">
+//	alert("弹出框");
+	
+</script>
+<script type="text/javascript" src="js/scriptTest.js" ></script>
+
+
 <title>个人信息展示</title>
 </head>
 <body>

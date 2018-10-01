@@ -12,15 +12,28 @@
 	<div>
 
 		<%
+			//连接数据库
 			MySql service=new MySql();
-			String sql="select * from personalblog.blogpicture where id="+request.getParameter("id");
+			int id=Integer.valueOf(request.getParameter("id"));
+			String sql="select * from personalblog.blogpicture where id="+id;
 			ResultSet rs=service.Query(sql);
 			while(rs.next()){
+
 		%>
+			<!-- 显示浏览量 -->
+			<p>浏览量：<%=rs.getInt("clickCount")%></p>
+			
+			<%
+			//浏览量更改
+			sql="UPDATE personalblog.blogpicture SET clickCount="+(rs.getInt("clickCount")+1)+" WHERE id="+id;
+			service.execute(sql);
+			%>
+			<!-- 图片显示 -->
 			<a href="Picture.jsp?">
 			<img src="<%=rs.getString("pictureAddress")%>">
 			</a>
-		<%
+
+		<%	
 			}
 			service.closeAll();
 		%>

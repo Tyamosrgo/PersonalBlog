@@ -18,6 +18,7 @@
  				密码 <input type="password" name="userpassword"/>
             </p>
             <input type="submit" value="注册">
+            <a href="http://localhost:8080/PersonalBlog/Login.jsp">返回</a>
         </div>
 		
 	

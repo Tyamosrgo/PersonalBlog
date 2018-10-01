@@ -36,7 +36,7 @@ public class MySql {
 		}catch(SQLException e){
 			e.printStackTrace();
 		}finally{
-			closeAll();
+//			closeAll();
 		}
 		return count;
 	}
@@ -54,7 +54,7 @@ public class MySql {
 		}catch(SQLException e){
 			e.printStackTrace();
 		}finally{
-			closeAll();
+//			closeAll();
 		}
 		return count;
 	}

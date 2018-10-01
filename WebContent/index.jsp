@@ -19,11 +19,13 @@
 	.usernamePrint{
 		float: right;
 	}
+	#lbpicture{
+		height:300px;
+	}
 	
 </style>
-
 </head>
-<body>
+<body onload="init()">
 	<!-- 网站抬头 -->
 	<div>网站首页</div>
 	<div>
@@ -31,9 +33,16 @@
 		<a href="PersonalInformation.jsp">个人信息</a>
 		<a href="BlogPage.jsp">博客</a>
 		<div class="usernamePrint">
-			欢迎，<a href="#"><%= session.getAttribute("username") %></a>
-			&nbsp&nbsp<a href="http://localhost:8080/PersonalBlog/Login.jsp">注销</a>
-			
+			<%
+			String username=String.valueOf(session.getAttribute("username"));;
+			if (username!="null"){	
+				%>欢迎，<a href="#"><%=username%></a><%
+				%>&nbsp&nbsp<a href="http://localhost:8080/PersonalBlog/LogOut.jsp">注销</a><%
+				
+			}else{
+				%>&nbsp&nbsp<a href="http://localhost:8080/PersonalBlog/Login.jsp">登录</a><%
+			}
+			%>
 		</div>
 	</div>
 
@@ -89,7 +98,32 @@
 	<div class="clear"></div>
 	
 	<hr/>
+	
+	<!-- 轮播图 -->
+	<div class="lunbo">
+		<img src="ui/img/lp1.jpg" id="lbpicture">
+	</div>
+	
 	<!-- 下方部分 -->
 	<div>用于最下方的  关于我们....</div>
 </body>
+	<script>
+		var i=1;
+		
+		function init(){
+			setInterval(showPicture,3000);
+		}
+		
+		function showPicture(){
+			var imgObj=document.getElementById("lbpicture");
+			
+			imgObj.src="ui/img/lp"+i+".jpg";
+			i++;
+			if (i>3){
+				i=1;
+			}
+		}
+		
+		
+	</script>
 </html>
